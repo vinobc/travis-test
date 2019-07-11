@@ -4,3 +4,10 @@ services:
 script:
   - docker build -t vinob/test-ci-cd .
   - docker images vinob/test-ci-cd
+before_deploy:
+  - docker login -u vinob -p rewop22222
+deploy:
+  provider: script
+  script: docker push vinob/test-ci-cd
+  on:
+    branch: master
