@@ -8,15 +8,15 @@ const client = mongodb.MongoClient;
 
 client.connect(config.DB, { useNewUrlParser: true }, (err, db) => { 
     if(err) {
-        console.log('database is not connected')
+        console.log('db is not connected')
     }
     else {
-        console.log('connected!!')
+        console.log('db connected!!')
     }
 });
 
 app.get('/', (req, res) => {
-    res.json("I love docker!");
+    res.json("Hello Docker !!");
 });
 
 app.listen(PORT, () => {
